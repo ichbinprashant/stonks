@@ -6,3 +6,5 @@ It works on data collected from Yahoo Finance(https://in.finance.yahoo.com/) usi
 df = web.DataReader('SBIN.NS', data_source='yahoo', start='2015-01-01', end='2020-11-13')
 
 E.g 'SBIN.NS' is the code for State Bank of India, NSE.  
+
+I've also incorporated matplotlib to visually incorporated the prediction and the actual price of the market.
