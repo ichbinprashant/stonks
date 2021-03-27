@@ -8,8 +8,12 @@ from keras.models import Sequential
 from keras.layers import  LSTM, Dense
 
 plt.style.use('fivethirtyeight')
-df = web.DataReader('SBIN.NS', data_source='yahoo', start='2015-01-01', end='2020-11-13')
-
+company = input("Enter the company you want the chart of: ")
+company = company.upper()
+try:
+  df = web.DataReader(company, data_source='yahoo', start='2015-01-01', end='2020-11-13')
+except:
+  print("Sorry, couldn't fetch the requested data of the company.")
 
 
 print(df)
