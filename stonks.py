@@ -1,3 +1,4 @@
+import sys
 import pandas_datareader as web
 import matplotlib.pyplot as plt
 import numpy as np
@@ -14,7 +15,7 @@ try:
   df = web.DataReader(company, data_source='yahoo', start='2015-01-01', end='2020-11-13')
 except:
   print("Sorry, couldn't fetch the requested data of the company.")
-
+  sys.exit(1)
 
 print(df)
 
