@@ -8,14 +8,11 @@ from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential
 from keras.layers import  LSTM, Dense
 
+import yfinance as yf
+
 plt.style.use('fivethirtyeight')
-company = input("Enter the company you want the chart of: ")
-company = company.upper()
-try:
-  df = web.DataReader(company, data_source='yahoo', start='2015-01-01', end='2020-11-13')
-except:
-  print("Sorry, couldn't fetch the requested data of the company.")
-  sys.exit(1)
+df = yf.download('RELIANCE.NS', start='2015-01-01', end='2021-03-09')
+#using YahooFinance API to fetch data about the historical price of the stock
 
 print(df)
 
